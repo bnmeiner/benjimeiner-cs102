@@ -1,0 +1,6 @@
+C=gcc
+%.o: %.c
+		$(CC) -c -o $@ $< $(CFLAGS)
+
+problem3: problem3.o
+		$(CC) -o problem3 problem3.o
