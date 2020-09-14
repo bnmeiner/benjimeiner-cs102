@@ -1,5 +1,5 @@
 How to Run the Script:
-	type; ./problem1.sh 
+	type: ./problem1.sh 
 	
 Output from executing the script:
 
