@@ -7,11 +7,15 @@
 #define G 25
 #define PI 3.14159265258979
 #define sun 0
-#define earth 1
-#define mars 2
-#define SUN planet[sun]
-#define EARTH planet[earth]
-#define MARS planet[mars]
+#define mercury 1
+#define venus 2
+#define earth 3
+#define mars 4
+#define jupiter 5
+#define satrun 6
+#define uranus 7
+#define neptune 8
+
 
 typedef struct PLANETS {
     double x,y;
@@ -42,16 +46,14 @@ double findRise(Planet planet1, Planet planet2){
 
 void changePosition(int planetnum) {
         double xacc, yacc, acc, angle;
-        double distance = findDistance(SUN, planet[planetnum]);
-        double run = findRun(SUN, planet[planetnum]);
-        double rise = findRise(SUN, planet[planetnum]);
-
-// calculate acceleration, and angle, and portion of acceleration in x and y direction, and then change the velocities based on those accelerations
-        acc = G*SUN.mass/(distance*distance); //find acceleration based on Gm/r^2
+        double distance = findDistance(planet[sun], planet[planetnum]);
+        double run = findRun(planet[sun], planet[planetnum]);
+        double rise = findRise(planet[sun], planet[planetnum]);
+		// calculate acceleration, and angle, and portion of acceleration in x and y direction, and then change the velocities based on those accelerations
+        acc = G*planet[sun].mass/(distance*distance); //find acceleration based on Gm/r^2
         angle = atan2(rise,run) / PI; // angle in xPi radians between the planet, sun, and x axis, first number is the y direction and the second is the x direction
         xacc = cos(PI*angle) * acc; //based on the angle just found, calculate the acceleration in the x direction
         yacc = sin(PI*angle) * acc; //based on the angle just found, calculate the acceleration in the y direction
-
         planet[planetnum].yvel += yacc; //finds how much the velocity is going to change based on the acceleration
         planet[planetnum].xvel -= xacc; //finds how much the velocity is going to change based on the acceleration
         planet[planetnum].y += planet[planetnum].yvel; //changes y position based on the new velocity
@@ -60,32 +62,65 @@ void changePosition(int planetnum) {
 
 
 void drawPlanets() {
-        for (int i=0;i<=2;i++)
+        for (int i=0;i<=8;i++)
         	mvprintw(planet[i].y, planet[i].x, planet[i].c); //prints the sun in the center`
 }
 
 
 int main(int argc, char *argv[]) {
-    SUN.x = 60;
-    SUN.y = 25;
-    SUN.mass=4;
-    SUN.c = "s";
-
+// Sun planet 
+    planet[sun].x = 60;
+    planet[sun].y = 25;
+    planet[sun].mass=4;
+    planet[sun].c = "S";
+// mercury planet
+    planet[1].x = 75;
+    planet[1].y = 25;
+    planet[1].xvel = 0;
+    planet[1].yvel = 2;
+    planet[1].c = "m";
+// venus planet
+    planet[2].x = 77;
+    planet[2].y = 25;
+    planet[2].xvel = 0;
+    planet[2].yvel = 2;
+    planet[2].c =  "v";
 // earth planet
-    EARTH.x = 80;
-    EARTH.y = 25;
-    EARTH.xvel = 0;
-    EARTH.yvel = 2;
-    EARTH.c = "e";
-
+    planet[earth].x = 79;
+    planet[earth].y = 25;
+    planet[earth].xvel = 0;
+    planet[earth].yvel = 2;
+    planet[earth].c = "e";
 // mars planet
-    MARS.x = 77;
-    MARS.y = 25;
-    MARS.xvel = 0;
-    MARS.yvel = 2;
-    MARS.c = "m";
-
-
+    planet[mars].x = 81;
+    planet[mars].y = 25;
+    planet[mars].xvel = 0;
+    planet[mars].yvel = 2;
+    planet[mars].c = "M";
+// jupiter planet
+    planet[5].x = 83;
+    planet[5].y = 25;
+    planet[5].xvel = 0;
+    planet[5].yvel = 2;
+    planet[5].c = "J";
+// saturn planet
+    planet[6].x = 85;
+    planet[6].y = 25;
+    planet[6].xvel = 0;
+    planet[6].yvel = 2;
+    planet[6].c = "s";
+// uranus planet
+    planet[7].x = 87;
+    planet[7].y = 25;
+    planet[7].xvel = 0;
+    planet[7].yvel = 2;
+    planet[7].c = "U";
+// Neptune planet
+    planet[8].x = 89;
+    planet[8].y = 25;
+    planet[8].xvel = 0;
+    planet[8].yvel = 2;
+    planet[8].c = "N";
 
 // set the screen and draw circles
         initscr();
@@ -97,7 +132,7 @@ int main(int argc, char *argv[]) {
         usleep(DELAY); // Shorter delay between movement
 
         while(1) {
-			for(int i=1; i<=2; i++){
+			for(int i=1; i<=8; i++){
 			changePosition(i);
 			}
             //print new circle
