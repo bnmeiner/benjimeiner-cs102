@@ -4,7 +4,7 @@ One example is shown in this code, but it can be edited for any function and the
 //
 This code prints out 3 graphs, one of the original function, one of the derivative function and one of the integral function. 
 This code starts by importing matplotlib, numpy, and scipy. 
-Then, a function is defined. In this case the function is. 
+Then, a function is defined. In this case the function is ((1/20)*((x-3) ** 3) - (x ** 2))
 Next, some variables are declared and defined. 
 Upperlimit and lower limit is where the functions are being defined from, and step is how much x is changed by. For simplicity, the step is just 1. 
 Then the range of the function is defined based on the upper and lower limit, and y is set equal to f(x). 
