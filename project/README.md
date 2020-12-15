@@ -36,7 +36,8 @@ Planet planet[9];
   ```
  
   A couple of functions are now defined. 
-   **findDistance**: computes distance between 2 planets using the distance formula.
+**findDistance**: computes distance between 2 planets using the distance formula.
+
       ```
       double findDistance(Planet planet1, Planet planet2){
       double run = planet2.x - planet1.x;
