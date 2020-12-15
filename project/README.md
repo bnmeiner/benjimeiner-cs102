@@ -3,7 +3,7 @@ This program computes real physics calculations to simulate planets moving aroun
 
   The first part of the program includes the necessary files, ncurses (to print the planets), math.h (to use sin, cosine and power functions), and stdio.h. Next, we define the rest of the numbers needed for our program, delay, Gravitational constant (G), Pi, and then all the planets are given a number. 
 
-  Then, a structure is defined with 6 variables, x and y which are going to be the position of the planet, mass, xvel and yvel which are the velocities in the x direction and velocity in the y direction, and a character which will be the symbol each planet is given. Then an array called planet[] is created of type Planet (which is our structure). 
+  Then, a structure is defined with 6 variables, x and y which are going to be the position of the planet, mass, xvel and yvel which are the velocities in the x direction and velocity in the y direction, and a character which will be the symbol each planet is given. Then an array called planet[] is created of type "Planet"(which is our structure). 
   
   A couple of functions are now defined. 
       **findDistance**: computes distance between 2 planets using the distance formula.
