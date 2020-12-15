@@ -1,6 +1,6 @@
-#Planets.c:
+**Planets.c:**
 
-This program computes real physics calculations to simulate planets moving around the sun
+Goal: This program computes real physics calculations to simulate planets moving around the sun
 
   The first part of the program includes the necessary files, ncurses (to print the planets), math.h (to use sin, cosine and power functions), and stdio.h. Next, we define the rest of the numbers needed for our program, delay, Gravitational constant (G), Pi, and then all the planets are given a number. 
   
