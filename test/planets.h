@@ -30,14 +30,14 @@ typedef struct PLANETS {
 
 Planet planet[9];
 
-double findDistance(Planet planet1, Planet planet2)
+double findDistance(Planet planet1, Planet planet2);
 
-double findRun(Planet planet1, Planet planet2)
+double findRun(Planet planet1, Planet planet2);
 
-double findRise(Planet planet1, Planet planet2)
+double findRise(Planet planet1, Planet planet2);
 
-void changePosition(int planetnum) 
+void changePosition(int planetnum);
 
-void drawPlanets() 
+void drawPlanets();
 
 #endif /* PLANETS_H */
