@@ -16,7 +16,16 @@ Defines the neccecary files, ncurses (to print the planets), math.h (to use sin,
 
     findRise: finds the distance in the y direction between 2 planets.
 
-    changePosition: This function requires input of a number which represents the planet number (planetnum) and then changes the position based on the characteristics of that planet. Acceleration, x-acceleration, y-acceleration and angle variables are defined. Then the distance, run, and rise are calculated based on the previous functions. Then the acceleration is calculated based on GxM/r^2, which means gravitational constant times the mass of planet (this refers to the mass of the sun in this case) divided by the distance squared. This will get the acceleration of the planet being studied at its current position. Next, the angle that it makes with the sun is calculated with a function atan2(), which requires 2 inputs, the y distance (rise) and the x distance (run). This function is important because it will take into account whether the run or rise is negative and output the angle in the proper quadrant. Then, based on the total acceleration calculated, the xacc and yacc are calculated using sin and cosine functions of the angle multiplied by the acceleration. Now that the acceleration portions have been calculated, the velocities can now be changed. Planet[planetnum].yvel += yacc means, take the y velocity of the number planet that has been inputted and add to it the y acceleration. Then, with this new velocity, add it to the y position of that planet (same calculations for x). 
+    changePosition: This function requires input of a number which represents the planet number (planetnum) and then changes the position based on the characteristics of that planet. 
+    Acceleration, x-acceleration, y-acceleration and angle variables are defined. Then the distance, run, and rise are calculated based on the previous functions. 
+    Then the acceleration is calculated based on GxM/r^2, which means gravitational constant times the mass of planet (this refers to the mass of the sun in this case) divided by the distance squared. 
+    This will get the acceleration of the planet being studied at its current position. 
+    Next, the angle that it makes with the sun is calculated with a function atan2(), which requires 2 inputs, the y distance (rise) and the x distance (run). 
+    This function is important because it will take into account whether the run or rise is negative and output the angle in the proper quadrant.
+    Then, based on the total acceleration calculated, the xacc and yacc are calculated using sin and cosine functions of the angle multiplied by the acceleration. 
+    Now that the acceleration portions have been calculated, the velocities can now be changed. 
+    Planet[planetnum].yvel += yacc means, take the y velocity of the number planet that has been inputted and add to it the y acceleration. 
+    Then, with this new velocity, add it to the y position of that planet (same calculations for x). 
           
     drawPlanets: draws all the planets with mvprintw(y, x, char)
 
