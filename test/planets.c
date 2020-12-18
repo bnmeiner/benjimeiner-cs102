@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
+#include "planets.h"
 
 double findDistance(Planet planet1, Planet planet2){
     double run = planet2.x - planet1.x;
